@@ -4,7 +4,7 @@
 
 **Author:** Blaine Christopher Swieder
 
-**Project status:** Research design and implementation planning
+**Project status:** Research Design and Implementation Planning
 
 ## Overview
 
