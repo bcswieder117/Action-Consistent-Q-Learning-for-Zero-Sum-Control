@@ -177,6 +177,8 @@ The new project focuses more directly on action representation, learning consist
 
 Reused code and reference results will be attributed to the earlier work. New findings will be reported after the corresponding experiments and analyses are completed.
 
+See link: https://github.com/bcswieder117/Disturbance-Aware-Model-Based-and-Model-Free-Zero-Sum-Pursuit-Evasion-Control
+
 ## Initial Scope
 
 The first stage focuses on:
