@@ -1,0 +1,2 @@
+# Disturbance-Aware-Model-Based-and-Model-Free-Zero-Sum-Pursuit-Evasion-Control-Part-II
+Continues my MS project lied at the intersection of zero-sum optimal control, game-theoretic multi-agent systems, and model-free quadratic Q-learning, with a focus on disturbance-aware pursuit–evasion control and MATLAB-based validation. This research is conducted with Vanderbilt University and will be entirely associated here.
