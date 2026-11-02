@@ -2,8 +2,9 @@
 
 **Learning reliable adversarial control policies when commanded and applied actions differ.**
 
-**Author:** Blaine Christopher Swieder  
-**Project status:** Research Design and Implementation Planning
+**Author:** Blaine Christopher Swieder
+
+**Project status:** Research design and implementation planning
 
 ## Overview
 
@@ -30,50 +31,49 @@ The planned study combines quadratic Q-learning, calibration, representation ana
 
 The starting point is a discrete-time linear-quadratic zero-sum game:
 
-$$
+```math
 x_{k+1}
 =
 Ax_k
 +
 B_Pu^{\mathrm{act}}_{P,k}
 +
-B_Eu^{\mathrm{act}}_{E,k},
-$$
+B_Eu^{\mathrm{act}}_{E,k}
+```
 
-where commanded and applied inputs satisfy
+Commanded and applied inputs satisfy:
 
-$$
+```math
 u^{\mathrm{act}}_{i,k}
 =
 u^{\mathrm{cmd}}_{i,k}
 +
 b_{i,k},
-\qquad i\in\{P,E\}.
-$$
+\qquad i \in \{P,E\}
+```
 
 Here:
 
-- $x_k$ is the system state.
-- $u^{\mathrm{cmd}}_{i,k}$ is the commanded input.
-- $u^{\mathrm{act}}_{i,k}$ is the applied input.
-- $b_{i,k}$ represents actuator mismatch.
-- $P$ and $E$ denote the minimizing and maximizing players.
+- $`x_k`$ is the system state.
+- $`u^{\mathrm{cmd}}_{i,k}`$ is the commanded input.
+- $`u^{\mathrm{act}}_{i,k}`$ is the applied input.
+- $`b_{i,k}`$ represents actuator mismatch.
+- $`P`$ and $`E`$ denote the minimizing and maximizing players.
 
 Initial experiments will use constant offsets. Later experiments will introduce drift and changes in the offsets.
 
 The stage cost is defined using applied inputs:
 
-$$
+```math
+\begin{aligned}
 \ell_k
-=
-x_k^\top Qx_k
-+
-\left(u^{\mathrm{act}}_{P,k}\right)^\top
-R_Pu^{\mathrm{act}}_{P,k}
--
-\left(u^{\mathrm{act}}_{E,k}\right)^\top
+&= x_k^\top Qx_k \\
+&\quad + \left(u^{\mathrm{act}}_{P,k}\right)^\top
+R_Pu^{\mathrm{act}}_{P,k} \\
+&\quad - \left(u^{\mathrm{act}}_{E,k}\right)^\top
 R_Eu^{\mathrm{act}}_{E,k}.
-$$
+\end{aligned}
+```
 
 The pursuer minimizes the objective, while the evader maximizes it.
 
@@ -91,7 +91,7 @@ Commanded actions can also provide valid action coordinates when the dynamics, c
 ## Planned Comparisons
 
 | Configuration | Action information or representation | Purpose |
-|---|---|---|
+| --- | --- | --- |
 | Command-only quadratic learner | Commanded actions with homogeneous quadratic features | Test mismatch under the nominal representation |
 | Applied-action learner | Measured applied actions | Establish a reference under explicit measurement assumptions |
 | Calibration-based learner | Applied-action estimates reconstructed from commands and estimated offsets | Evaluate finite calibration accuracy |
@@ -201,8 +201,9 @@ Nonlinear vehicle experiments, constraints, safety filtering, and hardware valid
 
 ## Foundational References
 
-1. A. Al-Tamimi, F. L. Lewis, and M. Abu-Khalaf, “Model-Free Q-Learning Designs for Linear Discrete-Time Zero-Sum Games With Application to H-Infinity Control,” *Automatica*, vol. 43, no. 3, pp. 473–481, 2007.
+1. A. Al-Tamimi, F. L. Lewis, and M. Abu-Khalaf, "Model-Free Q-Learning Designs for Linear Discrete-Time Zero-Sum Games With Application to H-Infinity Control," *Automatica*, vol. 43, no. 3, pp. 473-481, 2007.
 
-2. S. A. A. Rizvi and Z. Lin, “Output Feedback Q-Learning for Discrete-Time Linear Zero-Sum Games With Application to the H-Infinity Control,” *Automatica*, vol. 95, pp. 213–221, 2018.
+2. S. A. A. Rizvi and Z. Lin, "Output Feedback Q-Learning for Discrete-Time Linear Zero-Sum Games With Application to the H-Infinity Control," *Automatica*, vol. 95, pp. 213-221, 2018.
 
-3. B. Luo, Y. Yang, and D. Liu, “Policy Iteration Q-Learning for Data-Based Two-Player Zero-Sum Game of Linear Discrete-Time Systems,” *IEEE Transactions on Cybernetics*, vol. 51, no. 7, pp. 3630–3640, 2021.
+3. B. Luo, Y. Yang, and D. Liu, "Policy Iteration Q-Learning for Data-Based Two-Player Zero-Sum Game of Linear Discrete-Time Systems," *IEEE Transactions on Cybernetics*, vol. 51, no. 7, pp. 3630-3640, 2021.
+
