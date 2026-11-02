@@ -90,13 +90,13 @@ Commanded actions can also provide valid action coordinates when the dynamics, c
 
 ## Planned Comparisons
 
-| Configuration | Action information or representation | Purpose |
+| Configuration | Action Information or Representation | Purpose |
 | --- | --- | --- |
-| Command-only quadratic learner | Commanded actions with homogeneous quadratic features | Test mismatch under the nominal representation |
-| Applied-action learner | Measured applied actions | Establish a reference under explicit measurement assumptions |
-| Calibration-based learner | Applied-action estimates reconstructed from commands and estimated offsets | Evaluate finite calibration accuracy |
-| Affine-aware command learner | Commanded actions with constant, linear, and quadratic features | Test representation-based accommodation of persistent mismatch |
-| Model-based reference | Known dynamics and appropriately specified mismatch information | Provide reference policies and value functions |
+| Command-Only Quadratic Learner | Commanded actions with homogeneous quadratic features | Test mismatch under the nominal representation |
+| Applied-Action Learner | Measured applied actions | Establish a reference under explicit measurement assumptions |
+| Calibration-Based Learner | Applied-action estimates reconstructed from commands and estimated offsets | Evaluate finite calibration accuracy |
+| Affine-aware Command Learner | Commanded actions with constant, linear, and quadratic features | Test representation-based accommodation of persistent mismatch |
+| Model-Based Reference | Known dynamics and appropriately specified mismatch information | Provide reference policies and value functions |
 
 Comparisons will distinguish algorithm choice from measurement access. Shared datasets and matched information will be used where possible.
 
